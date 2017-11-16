@@ -97,13 +97,14 @@ to not automatically call it on our behalf. Additionally we're setting
 =use-package= will be handling that.
 
 #+BEGIN_SRC emacs-lisp
-  (setq load-prefer-newer noninteractive
-        package-user-dir "~/.emacs.d/elpa"
-        package--init-file-ensured t
-        package-enable-at-startup nil)
+  (eval-and-compile
+    (setq load-prefer-newer noninteractive
+          package-user-dir "~/.emacs.d/elpa"
+          package--init-file-ensured t
+          package-enable-at-startup nil)
 
-  (unless (file-directory-p package-user-dir)
-    (make-directory package-user-dir t))
+    (unless (file-directory-p package-user-dir)
+      (make-directory package-user-dir t)))
 #+END_SRC
 
 **** Use-Package Settings
