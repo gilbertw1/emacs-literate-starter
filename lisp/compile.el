@@ -1,0 +1,5 @@
+(require 'org)
+(org-babel-tangle-file "emacs.org")
+(setq byte-compile-warnings '(not free-vars unresolved noruntime lexical make-local))
+(byte-compile-file "emacs.el")
+(byte-compile-file "init.el")
