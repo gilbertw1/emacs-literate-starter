@@ -12,7 +12,7 @@ Install
 
     git clone https://github.com/gilbertw1/emacs-literate-starter.git ~/.emacs.d
 
-Compile
+Compile (not required, but recommended)
 
     cd ~/.emacs.d
     make compile

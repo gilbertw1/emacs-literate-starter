@@ -98,7 +98,7 @@ to not automatically call it on our behalf. Additionally we're setting
 
 #+BEGIN_SRC emacs-lisp
   (eval-and-compile
-    (setq load-prefer-newer noninteractive
+    (setq load-prefer-newer t
           package-user-dir "~/.emacs.d/elpa"
           package--init-file-ensured t
           package-enable-at-startup nil)
