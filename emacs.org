@@ -118,7 +118,10 @@ initialization significantly as many packages are only loaded later when they ar
 
 **** Manually Set Load Path
 We're going to set the load path ourselves so that we don't have to call =package-initialize= at
-runtime and incur a large performance hit.
+runtime and incur a large performance hit. This load-path will actually be faster than the one
+created by =package-initialize= because it appends the elpa packages to the end of the load path.
+Otherwise any time a builtin package was required it would have to search all of third party paths
+first.
 
 #+BEGIN_SRC emacs-lisp
   (eval-and-compile
