@@ -25,6 +25,7 @@
     - [[#swiper][Swiper]]
     - [[#magit][Magit]]
     - [[#projectile][Projectile]]
+    - [[#org][Org]]
     - [[#toc-org][Toc-org]]
   - [[#post-initialization][Post Initialization]]
 
@@ -215,6 +216,22 @@ going to install it and make sure it's loaded immediately.
 #+BEGIN_SRC emacs-lisp
 (use-package projectile
   :demand t)
+#+END_SRC
+
+*** Org
+Let's include a newer version of org-mode than the one that is built in. We're going
+to manually remove the org directories from the load path, to ensure the version we
+want is prioritized instead.
+
+#+BEGIN_SRC emacs-lisp
+(use-package org
+  :ensure org-plus-contrib
+  :pin org
+  :defer t)
+
+;; Ensure ELPA org is prioritized above built-in org.
+(require 'cl)
+(setq load-path (remove-if (lambda (x) (string-match-p "org$" x)) load-path))
 #+END_SRC
 
 *** Toc-org

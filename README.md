@@ -3,7 +3,7 @@ Emacs Literate Starter
 
 This is a simple starter template that provides everything needed to begin writing a literate
 configuration for Emacs. It includes several optimizations that ensures that the config is
-loaded very quickly.
+loaded very quickly. It benefits heavily from being byte compiled.
 
 
 ### Usage
